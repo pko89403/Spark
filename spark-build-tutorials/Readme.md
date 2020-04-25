@@ -13,4 +13,6 @@ brew install sbt
 - compile ( 스칼라 또는 자바 소스 파일을 compile )
 - package ( target 폴더에 존재하는 .jar 파일을 생성 )
 
-## spark-submit --master local --name test_sbt --class UsingGenericsForLikedList sbt-build-tutorials_2.13-0.0.1-SNAPSHOT.jar
+~~~sh
+spark-submit --master local --name test_sbt --class UsingGenericsForLikedList sbt-build-tutorials_2.13-0.0.1-SNAPSHOT.jar
+~~~
