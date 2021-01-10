@@ -54,7 +54,7 @@ object segementation_clustering {
 
   def main(args: Array[String]): Unit = {
 
-    val salinfoCSV = "s3://ap-pipe-rec/f_kcem_comcs_salinfo/sample/salinfo_201911.csv"
+    val salinfoCSV = ""
     val rawDF = spark.read.option("header", "true").csv(salinfoCSV)
     println(rawDF.printSchema())
 
