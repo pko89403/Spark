@@ -14,4 +14,4 @@ RUN apt-get update -y && \
 
 EXPOSE ${jupyter}
 WORKDIR ${SHARED_WORKSPACE}/jupyter
-CMD jupyter lab --ip=0.0.0.0 --port=${jupyter}} --no-browser --allow-root --NotebookApp.token=
+CMD jupyter lab --ip=0.0.0.0 --port=3306 --no-browser --allow-root --NotebookApp.token=

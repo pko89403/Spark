@@ -1,7 +1,7 @@
 # 3. Spark master image
 FROM spark-base 
 
-ARG spark_master_web_ui=9090
+ARG spark_master_web_ui=8080
 
 # exposing port configured at environment variable 
 # to allow workers to connect to the master node

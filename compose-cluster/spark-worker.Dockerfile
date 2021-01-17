@@ -1,7 +1,7 @@
 # 4. Spark worker image
 FROM spark-base
 
-ARG spark_worker_web_ui=9091
+ARG spark_worker_web_ui=8081
 
 # exposing port to the worker web ui
 EXPOSE ${spark_worker_web_ui}

@@ -3,7 +3,7 @@
 SPARK_VERSION="3.0.0"
 HADOOP_VERSION="2.7"
 JUPYTERLAB_VERSION="2.1.5"
-ZEPPELIN_VERSION="0.9.0"
+ZEPPELIN_VERSION="0.8.2"
 
 docker build \
   -f cluster-base.Dockerfile \
@@ -34,3 +34,4 @@ docker build \
   --build-arg zeppelin_version="${ZEPPELIN_VERSION}" \
   -f zeppelin.Dockerfile \
   -t zeppelin .
+
