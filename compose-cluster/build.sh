@@ -1,9 +1,18 @@
 # 6. Building the images
 # -- Software Stack Version 
-SPARK_VERSION="3.0.0"
+SPARK_VERSION="3.0.1"
 HADOOP_VERSION="2.7"
 JUPYTERLAB_VERSION="2.1.5"
 ZEPPELIN_VERSION="0.8.2"
+
+docker build \
+  --build-arg spark_version="3.0.1" \
+  --build-arg hadoop_version="2.7" \
+  -f spark-base.Dockerfile \
+  -t spark-base .
+
+
+
 
 docker build \
   -f cluster-base.Dockerfile \
