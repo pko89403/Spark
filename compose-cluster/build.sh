@@ -6,17 +6,14 @@ JUPYTERLAB_VERSION="2.1.5"
 ZEPPELIN_VERSION="0.8.2"
 
 docker build \
+  -f cluster-base.Dockerfile \
+  -t cluster-base .
+
+docker build \
   --build-arg spark_version="3.0.1" \
   --build-arg hadoop_version="2.7" \
   -f spark-base.Dockerfile \
   -t spark-base .
-
-
-
-
-docker build \
-  -f cluster-base.Dockerfile \
-  -t cluster-base .
 
 docker build \
   --build-arg spark_version="${SPARK_VERSION}" \
