@@ -28,9 +28,9 @@ COPY requirements.txt requirements.txt
 
 # 2. install python3 for pyspark
 RUN mkdir -p ${shared_workspace} && \
+    apt-get update && \
     apt-get install -y curl tar python3 python3-pip && \
     ln -s /usr/bin/python3 /usr/bin/python && \
-    pip3 install --upgrade pip && \
     pip3 install -r requirements.txt && \
     rm -rf /var/lib/apt/lists/*x 
 
@@ -38,12 +38,14 @@ RUN mkdir -p ${shared_workspace} && \
 RUN curl -L -o scala-${scala_version}.deb https://downloads.lightbend.com/scala/${scala_version}/scala-${scala_version}.deb && \
     dpkg -i scala-${scala_version}.deb && \
     rm scala-${scala_version}.deb && \
+    apt-get update && \
     apt-get install scala && \
     scala -version 
 
 RUN curl -L -o sbt-${sbt_version}.deb http://dl.bintray.com/sbt/debian/sbt-${sbt_version}.deb && \
     dpkg -i sbt-${sbt_version}.deb && \
     rm sbt-${sbt_version}.deb && \
+    apt-get update && \
     apt-get install sbt && \
     sbt sbtVersion
 
