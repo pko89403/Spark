@@ -58,6 +58,9 @@ services:
     volumes:
       - shared-workspace:/opt/workspace
       - ./opt/jar/:/opt/jar/
+    environment:
+      - MASTER=spark://spark-master:7077
+
 
   zeppelin:
     image: zeppelin
