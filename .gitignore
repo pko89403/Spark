@@ -1,4 +1,5 @@
-apache-zookeeper-3.5.8-bin/bin
-apache-zookeeper-3.5.8-bin/docs
-apache-zookeeper-3.5.8-bin/lib
-apache-zookeeper-3.5.8-bin/logs
+apache-zookeeper-3.5.8-bin
+*.jar
+*.log
+.DS_Store
+*.tgz
