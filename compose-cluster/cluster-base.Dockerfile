@@ -16,12 +16,12 @@ RUN apt-get update && \
 # Setup JAVA_HOME -- useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
-
+ENV SPARK_SUBMIT_OPTIONS="--jars /usr/local/jeppelin/local-repo/custom-spark-job.jar"
 
 ARG shared_workspace=/opt/workspace
 
-ARG scala_version=2.13.3
-ARG sbt_version=1.3.13
+ARG scala_version=2.12.3
+ARG sbt_version=1.0.2
 
 
 COPY requirements.txt requirements.txt

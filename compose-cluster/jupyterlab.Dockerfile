@@ -1,4 +1,4 @@
-FROM cluster-base
+FROM spark-base
 
 # -- Layer: JupyterLab
 
@@ -8,7 +8,9 @@ ARG jupyter=3306
 
 RUN apt-get update -y && \
     apt-get install -y python3-pip && \
-    pip3 install wget pyspark==${spark_version} jupyterlab==${jupyterlab_version} numpy
+    pip3 install wget pyspark==${spark_version} jupyterlab==${jupyterlab_version} numpy spylon_kernel && \
+    python -m spylon_kernel install
+
 # -- Runtime
 
 EXPOSE ${jupyter}

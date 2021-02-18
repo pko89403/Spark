@@ -1,14 +1,14 @@
-FROM cluster-base
+FROM spark-base
 
 # -- Layer: zeppelin
 
 ARG zeppelin_version=0.9.0
-ARG zeppelin_port=3333
+ARG zeppelin_port=8890
 
+COPY ./zeppelin.tgz /tmp/zeppelin.tgz
 
 RUN apt-get update -y && \
     apt-get install -y wget && \
-    wget https://downloads.apache.org/zeppelin/zeppelin-${zeppelin_version}/zeppelin-${zeppelin_version}-bin-all.tgz -O /tmp/zeppelin.tgz && \
     tar -xzvf /tmp/zeppelin.tgz -C /opt/ && \
     mv /opt/zeppelin-* /opt/zeppelin && \
     rm /tmp/zeppelin.tgz

@@ -15,5 +15,24 @@
 - spark worker1 at localhost:9091
 - spark worker2 at localhost:9092
 
+```
+
+hadoop fs -ls hdfs://namenode:8020/
+hadoop fs -put *.xml /medline
+```
+
+```
+import org.apache.spark.sql.SparkSession
+
+val spark= SparkSession
+    .builder()
+    .appName("spark get xml data from hdfs")
+    .getOrCreate()
+
+val rawXML = spark.read
+    .format("com.databricks.spark.xml")
+    .option("rowTag", "MedlineCitation")
+    .load("hdfs://namenode:8020/medline/medsamp2016a.xml")
+```
 
 [참고 사이트]('https://towardsdatascience.com/apache-spark-cluster-on-docker-ft-a-juyterlab-interface-418383c95445')
