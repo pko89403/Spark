@@ -3,15 +3,16 @@ FROM cluster-base
 
 
 # download, unpack, move apache spark latest version with official repository
-ARG spark_version=3.0.1
-ARG hadoop_version=2.7 
+ARG spark_version=3.1.2
+ARG hadoop_version=3.2 
 
 COPY requirements.txt requirements.txt
+
 RUN apt-get update -y && \
     apt-get install -y curl && \
     pip3 install --upgrade pip && \
     pip3 install -r requirements.txt && \
-    curl https://archive.apache.org/dist/spark/spark-${spark_version}/spark-${spark_version}-bin-hadoop${hadoop_version}.tgz -o spark.tgz && \
+    curl -L -o spark.tgz https://archive.apache.org/dist/spark/spark-${spark_version}/spark-${spark_version}-bin-hadoop${hadoop_version}.tgz && \
     tar -xf spark.tgz && \
     mv spark-${spark_version}-bin-hadoop${hadoop_version} /usr/bin/ && \
     mkdir /usr/bin/spark-${spark_version}-bin-hadoop${hadoop_version}/logs && \

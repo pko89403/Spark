@@ -1,8 +1,6 @@
 FROM spark-base
 
 # -- Layer: zeppelin
-
-ARG zeppelin_version=0.9.0
 ARG zeppelin_port=8890
 
 COPY ./zeppelin.tgz /tmp/zeppelin.tgz

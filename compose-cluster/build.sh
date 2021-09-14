@@ -1,43 +1,43 @@
 # 6. Building the images
 # -- Software Stack Version 
-SPARK_VERSION="3.0.1"
-HADOOP_VERSION="2.7"
-JUPYTERLAB_VERSION="2.1.5"
-ZEPPELIN_VERSION="0.9.0"
+SCALA_VERSION="2.12.3"
+SBT_VERSION="1.0.2"
+SPARK_VERSION="3.1.2"
+HADOOP_VERSION="3.2"
 
 docker build \
+  --build-arg scala_version="${SCALA_VERSION}" \
+  --build-arg sbt_version="${SBT_VERSION}" \
+  --network host \
   -f cluster-base.Dockerfile \
   -t cluster-base .
 
 docker build \
-  --build-arg spark_version="3.0.1" \
-  --build-arg hadoop_version="2.7" \
-  -f spark-base.Dockerfile \
-  -t spark-base .
-
-docker build \
   --build-arg spark_version="${SPARK_VERSION}" \
   --build-arg hadoop_version="${HADOOP_VERSION}" \
+  --network host \
   -f spark-base.Dockerfile \
   -t spark-base .
 
 docker build \
+  --network host \
   -f spark-master.Dockerfile \
   -t spark-master .
 
 docker build \
+  --network host \
   -f spark-worker.Dockerfile \
   -t spark-worker .
 
 docker build \
   --build-arg spark_version="${SPARK_VERSION}" \
-  --build-arg jupyterlab_version="${JUPYTERLAB_VERSION}" \
+  --network host \
   -f jupyterlab.Dockerfile \
   -t jupyterlab .
 
 docker build \
   --build-arg spark_version="${SPARK_VERSION}" \
-  --build-arg zeppelin_version="${ZEPPELIN_VERSION}" \
+  --network host \
   -f zeppelin.Dockerfile \
   -t zeppelin .
 

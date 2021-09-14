@@ -42,7 +42,7 @@ RUN curl -L -o scala-${scala_version}.deb https://downloads.lightbend.com/scala/
     apt-get install scala && \
     scala -version 
 
-RUN curl -L -o sbt-${sbt_version}.deb http://dl.bintray.com/sbt/debian/sbt-${sbt_version}.deb && \
+RUN curl -L -o sbt-${sbt_version}.deb https://repo.scala-sbt.org/scalasbt/debian/sbt-${sbt_version}.deb && \ 
     dpkg -i sbt-${sbt_version}.deb && \
     rm sbt-${sbt_version}.deb && \
     apt-get update && \
