@@ -105,7 +105,7 @@ spylon==0.3.0
 spylon-kernel==0.4.1
 tensorboard==2.4.1
 tensorboard-plugin-wit==1.8.0
-tensorflow==2.4.1
+tensorflow==2.5.3
 tensorflow-estimator==2.4.0
 tensorflowonspark==2.2.2
 tensorframes==0.2.9
