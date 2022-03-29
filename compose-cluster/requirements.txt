@@ -29,7 +29,7 @@ google-pasta==0.2.0
 graphviz==0.8.4
 grpcio==1.32.0
 h5py==2.10.0
-horovod==0.21.3
+horovod==0.24.0
 hyperopt==0.2.5
 idna==2.10
 ipykernel==5.5.0
