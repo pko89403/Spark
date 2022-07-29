@@ -53,7 +53,7 @@ Keras-Preprocessing==1.1.2
 Markdown==3.3.4
 MarkupSafe==1.1.1
 metakernel==0.27.5
-mistune==0.8.4
+mistune==2.0.3
 mxnet==1.7.0.post2
 nbclient==0.5.3
 nbconvert==6.0.7
