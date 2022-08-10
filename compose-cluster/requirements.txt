@@ -56,7 +56,7 @@ metakernel==0.27.5
 mistune==0.8.4
 mxnet==1.7.0.post2
 nbclient==0.5.3
-nbconvert==6.0.7
+nbconvert==6.3.0
 nbformat==5.1.2
 nest-asyncio==1.5.1
 networkx==2.5
